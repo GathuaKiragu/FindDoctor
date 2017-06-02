@@ -12,22 +12,17 @@ import okhttp3.Request;
 
 public class BetterDoctorService {
 
-    public static void findLocation(String location, Callback callback) {
+    public static void findDoctors(String location, Callback callback) {
         OkHttpClient client = new OkHttpClient.Builder()
                 .build();
 
 //Creating a new URL using the API_BASE_URL and turn is to a string
         HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.API_BASE_URL).newBuilder();
-        urlBuilder.addQueryParameter(Constants.YOUR_QUERY_PARAMETER, location);
-        urlBuilder.addQueryParameter(Constants.API_KEY_QUERY_PARAMETER, Constants.BETTER_DOCTOR_API);
-        String url = urlBuilder.build().toString();
-
+        String url = urlBuilder.build().toString() + location + Constants.API_KEY_QUERY_PARAMETER + Constants.BETTER_DOCTOR_API;
 // Calling a request
-
         Request request= new Request.Builder()
                 .url(url)
                 .build();
-
         Call call = client.newCall(request);
         call.enqueue(callback);
     }
