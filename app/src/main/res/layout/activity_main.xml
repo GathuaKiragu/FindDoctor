@@ -32,7 +32,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginRight="73dp"
         android:layout_marginEnd="73dp"
-        android:id="@+id/textView" />
+        android:id="@+id/headerTextView"/>
 
     <Button
         android:id="@+id/findDoctorButton"
@@ -49,8 +49,8 @@
         android:id="@+id/location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView"
-        android:layout_alignStart="@+id/textView"
+        android:layout_alignLeft="@+id/headerTextView"
+        android:layout_alignStart="@+id/headerTextView"
         android:layout_centerVertical="true"
         android:ems="10"
         android:drawableLeft="@drawable/ic_add_location_black_24dp"
