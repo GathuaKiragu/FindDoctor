@@ -54,7 +54,7 @@ public class Doctor{
         return mGender;
     }
 
-    public ArrayList<String> getmSpecialty(){
+    public ArrayList<String> getSpecialty(){
         return mSpecialty;
     }
     public ArrayList<String> getLanguages() {
