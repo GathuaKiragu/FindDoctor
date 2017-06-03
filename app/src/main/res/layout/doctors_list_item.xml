@@ -5,7 +5,7 @@
     <ImageView
         android:layout_width="130dp"
         android:layout_height="100dp"
-        android:id="@+id/restaurantImageView"
+        android:id="@+id/doctorImageView"
         android:src="@drawable/image"
         android:scaleType="centerCrop"/>
 
@@ -29,8 +29,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Title"
-            android:id="@+id/categoryTextView"
-            android:layout_below="@+id/restaurantNameTextView"
+            android:id="@+id/doctorsTitleTextView"
+            android:layout_below="@+id/doctorsTitleTextView"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textStyle="italic"/>
@@ -47,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Address"
-            android:id="@+id/adressTextView"
+            android:id="@+id/addressTextView"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textStyle="italic"/>
