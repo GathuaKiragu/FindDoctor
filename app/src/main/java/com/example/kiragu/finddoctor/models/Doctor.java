@@ -1,4 +1,4 @@
-package com.example.kiragu.finddoctor;
+package com.example.kiragu.finddoctor.models;
 
 import java.util.ArrayList;
 

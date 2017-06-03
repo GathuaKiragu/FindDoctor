@@ -1,4 +1,7 @@
-package com.example.kiragu.finddoctor;
+package com.example.kiragu.finddoctor.services;
+
+import com.example.kiragu.finddoctor.Constants;
+import com.example.kiragu.finddoctor.models.Doctor;
 
 import org.json.JSONArray;
 import org.json.JSONException;

@@ -8,6 +8,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.kiragu.finddoctor.models.Doctor;
+import com.example.kiragu.finddoctor.services.BetterDoctorService;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
