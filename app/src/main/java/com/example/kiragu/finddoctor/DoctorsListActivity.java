@@ -3,11 +3,14 @@ package com.example.kiragu.finddoctor;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.kiragu.finddoctor.adapters.DoctorsListAdapter;
 import com.example.kiragu.finddoctor.models.Doctor;
 import com.example.kiragu.finddoctor.services.BetterDoctorService;
 
@@ -21,12 +24,13 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 public class DoctorsListActivity extends AppCompatActivity {
+    public static final String TAG = DoctorsListActivity.class.getSimpleName();
     @Bind(R.id.doctorLocation)
     TextView mDoctorLocation;
-
     @Bind(R.id.doctorList)
     ListView mDoctorList;
-    public static final String TAG = DoctorsListActivity.class.getSimpleName();
+    @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
+    private DoctorsListAdapter mAdapter;
     public ArrayList<Doctor> mDoctors = new ArrayList<>();
 
     @Override
@@ -56,28 +60,15 @@ public class DoctorsListActivity extends AppCompatActivity {
                 mDoctors = betterDoctorService.processResults(response);
 
                 DoctorsListActivity.this.runOnUiThread(new Runnable() {
-
-                    @Override
-                    public void run() {
-                        String[] restaurantNames = new String[mDoctors.size()];
-                        for (int i = 0; i < restaurantNames.length; i++) {
-                            restaurantNames[i] = mDoctors.get(i).getName();
+                        @Override
+                        public void run() {
+                            mAdapter = new DoctorsListAdapter(getApplicationContext(), mDoctors);
+                            mRecyclerView.setAdapter(mAdapter);
+                            RecyclerView.LayoutManager layoutManager =
+                                    new LinearLayoutManager(DoctorsListActivity.this);
+                            mRecyclerView.setLayoutManager(layoutManager);
+                            mRecyclerView.setHasFixedSize(true);
                         }
-
-                        ArrayAdapter adapter = new ArrayAdapter(DoctorsListActivity.this,
-                                android.R.layout.simple_list_item_1, restaurantNames);
-                        mDoctorList.setAdapter(adapter);
-
-                        for (Doctor doctor : mDoctors) {
-                            Log.d(TAG, "Name: " + doctor.getName());
-                            Log.d(TAG, "Website: " + doctor.getTitle());
-                            Log.d(TAG, "Image url: " + doctor.getImage());
-                            Log.d(TAG, "Rating: " + Double.toString(doctor.getRating()));
-                            Log.d(TAG, "Phone: " + android.text.TextUtils.join(", ", doctor.getPhone()));
-                            Log.d(TAG, "Specialty: " + doctor.getSpecialty().toString());
-                        }
-                    }
-
                 });
             }
         });

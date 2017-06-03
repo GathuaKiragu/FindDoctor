@@ -31,21 +31,25 @@ public class DoctorsListAdapter extends RecyclerView.Adapter<DoctorsListAdapter.
 
     @Override
     public DoctorsListAdapter.DoctorsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        // Inflate the custom layout
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.doctors_list_item, parent, false);
+        // Return a new holder instance
         DoctorsViewHolder viewHolder = new DoctorsViewHolder(view);
         return viewHolder;
     }
-
+    // Populating data into the item through holder
     @Override
     public void onBindViewHolder(DoctorsListAdapter.DoctorsViewHolder holder, int position) {
+        // Get the data model based on position
         holder.bindDoctor(mDoctors.get(position));
     }
-
+    // Returns the total count of items in the list
     @Override
     public int getItemCount() {
         return mDoctors.size();
     }
 
+    // Set item views based on your views and data model
     public class DoctorsViewHolder extends RecyclerView.ViewHolder {
         @Bind(R.id.doctorImageView)
         ImageView mRestaurantImageView;
