@@ -63,7 +63,6 @@ public class Doctor{
     public String getAddress() {
         return mAddress;
     }
-
     public String getBio() {
         return mBio;
     }

@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.kiragu.finddoctor.R;
 import com.example.kiragu.finddoctor.models.Doctor;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -49,10 +50,10 @@ public class DoctorsListAdapter extends RecyclerView.Adapter<DoctorsListAdapter.
         return mDoctors.size();
     }
 
-    // Set item views based on your views and data model
+    // Set item views based on views and data model
     public class DoctorsViewHolder extends RecyclerView.ViewHolder {
         @Bind(R.id.doctorImageView)
-        ImageView mRestaurantImageView;
+        ImageView mDoctorImageView;
         @Bind(R.id.doctorsNameTextView)
         TextView mDoctorsNameTextView;
         @Bind(R.id.doctorsTitleTextView)
@@ -69,6 +70,8 @@ public class DoctorsListAdapter extends RecyclerView.Adapter<DoctorsListAdapter.
         TextView mAvailabilityTextView;
         @Bind(R.id.ratingTextView)
         TextView mRatingTextView;
+        @Bind(R.id.languageTextView) TextView mLanguageTextView;
+        @Bind(R.id.specialtyTextView) TextView mSpecialty;
         private Context mContext;
 
         public DoctorsViewHolder(View itemView) {
@@ -76,8 +79,9 @@ public class DoctorsListAdapter extends RecyclerView.Adapter<DoctorsListAdapter.
             ButterKnife.bind(this, itemView);
             mContext = itemView.getContext();
         }
-
+//receiving data from the model and setting it to our view
         public void bindDoctor(Doctor doctor) {
+            Picasso.with(mContext).load(doctor.getImage()).into(mDoctorImageView);
             mDoctorsNameTextView.setText(doctor.getName());
             mDoctorsTitleTextView.setText(doctor.getTitle());
             mGenderTextView.setText(doctor.getGender());
@@ -86,8 +90,10 @@ public class DoctorsListAdapter extends RecyclerView.Adapter<DoctorsListAdapter.
             mAvailabilityTextView.setText(doctor.getmAvailability());
             mPhoneTextView.setText(doctor.getPhone().get(0));
             mRatingTextView.setText("Rating: " + doctor.getRating());
-        }
+            mSpecialty.setText(doctor.getSpecialty().get(0));
+            mLanguageTextView.setText(doctor.getLanguages().get(0));
 
+        }
     }
 }
 

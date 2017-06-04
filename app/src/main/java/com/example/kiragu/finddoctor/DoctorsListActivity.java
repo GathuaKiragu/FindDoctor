@@ -5,18 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.kiragu.finddoctor.adapters.DoctorsListAdapter;
 import com.example.kiragu.finddoctor.models.Doctor;
 import com.example.kiragu.finddoctor.services.BetterDoctorService;
-
 import java.io.IOException;
 import java.util.ArrayList;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import okhttp3.Call;
@@ -26,9 +21,7 @@ import okhttp3.Response;
 public class DoctorsListActivity extends AppCompatActivity {
     public static final String TAG = DoctorsListActivity.class.getSimpleName();
     @Bind(R.id.doctorLocation)
-    TextView mDoctorLocation;
-    @Bind(R.id.doctorList)
-    ListView mDoctorList;
+    TextView mDoctorLocation;;
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
     private DoctorsListAdapter mAdapter;
     public ArrayList<Doctor> mDoctors = new ArrayList<>();
@@ -41,7 +34,6 @@ public class DoctorsListActivity extends AppCompatActivity {
 //Receive passed location
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
-        mDoctorLocation.setText("Doctors Around: " + location);
         getDoctors(location);
 
     }
