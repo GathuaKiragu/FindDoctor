@@ -20,8 +20,6 @@ import okhttp3.Response;
 
 public class DoctorsListActivity extends AppCompatActivity {
     public static final String TAG = DoctorsListActivity.class.getSimpleName();
-    @Bind(R.id.doctorLocation)
-    TextView mDoctorLocation;;
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
     private DoctorsListAdapter mAdapter;
     public ArrayList<Doctor> mDoctors = new ArrayList<>();

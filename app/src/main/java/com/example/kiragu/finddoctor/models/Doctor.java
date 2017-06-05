@@ -16,12 +16,11 @@ public class Doctor{
     private String mAddress;
     private String mBio;
     private ArrayList<String> mPhone = new ArrayList<>();
-    private double mRating;
-    private String mAvailability;
+//    private double mRating;
 
     // Constructor
     public Doctor(String name, String title, String image, String gender, ArrayList<String> specialty, ArrayList<String> language, String address, String bio,
-                  ArrayList<String> phone, double rating, String availability) {
+                  ArrayList<String> phone) {
         this.mName = name;
         this.mTitle = title;
         this.mImage = image;
@@ -31,8 +30,7 @@ public class Doctor{
         this.mAddress = address;
         this.mBio = bio;
         this.mPhone = phone;
-        this.mRating = rating;
-        this.mAvailability = availability;
+//        this.mRating = rating;
 
 
     }
@@ -69,12 +67,8 @@ public class Doctor{
     public ArrayList<String> getPhone() {
         return mPhone;
     }
-    public double getRating() {
-        return mRating;
-    }
-    public String getmAvailability() {
-        return mAvailability;
-    }
-
+//    public double getRating() {
+//        return mRating;
+//    }
 }
 

@@ -56,22 +56,18 @@ public class DoctorsListAdapter extends RecyclerView.Adapter<DoctorsListAdapter.
         ImageView mDoctorImageView;
         @Bind(R.id.doctorsNameTextView)
         TextView mDoctorsNameTextView;
-        @Bind(R.id.doctorsTitleTextView)
-        TextView mDoctorsTitleTextView;
-        @Bind(R.id.genderTextView)
-        TextView mGenderTextView;
-        @Bind(R.id.addressTextView)
-        TextView mAddressTextView;
-        @Bind(R.id.phoneTextView)
-        TextView mPhoneTextView;
+//        @Bind(R.id.doctorsTitleTextView)
+//        TextView mDoctorsTitleTextView;
+//        @Bind(R.id.genderTextView)
+//        TextView mGenderTextView;
+//        @Bind(R.id.addressTextView)
+//        TextView mAddressTextView;
+//        @Bind(R.id.phoneTextView)
+//        TextView mPhoneTextView;
         @Bind(R.id.doctorsBio)
         TextView mDoctorsBio;
-        @Bind(R.id.availabilityTextView)
-        TextView mAvailabilityTextView;
-        @Bind(R.id.ratingTextView)
-        TextView mRatingTextView;
-        @Bind(R.id.languageTextView) TextView mLanguageTextView;
-        @Bind(R.id.specialtyTextView) TextView mSpecialty;
+//        @Bind(R.id.languageTextView) TextView mLanguageTextView;
+//        @Bind(R.id.specialtyTextView) TextView mSpecialty;
         private Context mContext;
 
         public DoctorsViewHolder(View itemView) {
@@ -83,15 +79,13 @@ public class DoctorsListAdapter extends RecyclerView.Adapter<DoctorsListAdapter.
         public void bindDoctor(Doctor doctor) {
             Picasso.with(mContext).load(doctor.getImage()).into(mDoctorImageView);
             mDoctorsNameTextView.setText(doctor.getName());
-            mDoctorsTitleTextView.setText(doctor.getTitle());
-            mGenderTextView.setText(doctor.getGender());
-            mAddressTextView.setText(doctor.getName());
+//            mDoctorsTitleTextView.setText(doctor.getTitle());
+//            mGenderTextView.setText(doctor.getGender());
+//            mAddressTextView.setText(doctor.getName());
             mDoctorsBio.setText(doctor.getBio());
-            mAvailabilityTextView.setText(doctor.getmAvailability());
-            mPhoneTextView.setText(doctor.getPhone().get(0));
-            mRatingTextView.setText("Rating: " + doctor.getRating());
-            mSpecialty.setText(doctor.getSpecialty().get(0));
-            mLanguageTextView.setText(doctor.getLanguages().get(0));
+//            mPhoneTextView.setText(doctor.getPhone().get(0));
+//            mSpecialty.setText(doctor.getSpecialty().get(0));
+//            mLanguageTextView.setText(doctor.getLanguages().get(0));
 
         }
     }

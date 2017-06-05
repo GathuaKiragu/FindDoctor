@@ -61,31 +61,29 @@ public class BetterDoctorService {
                     }
 
                     ArrayList<String> languages = new ArrayList<>();
-                    JSONArray languageJSON = doctorsJSON.getJSONObject("langauges")
-                            .getJSONArray("name");
+                    JSONArray languageJSON = doctorsJSON.getJSONArray("practices").getJSONObject(0).getJSONArray("languages");
                     for (int y = 0; y < languageJSON.length(); y++) {
-                        languages.add(languageJSON.get(y).toString());
+                        languages.add(languageJSON.getJSONObject(0).getString("name").toString());
                     }
 
-                    String state = doctorsJSON.getJSONObject("visit_address").getString("state_long");
-                    String street = doctorsJSON.getJSONObject("visit_address").getString("street");
-                    String street2 = doctorsJSON.getJSONObject("visit_address").getString("street2");
+                    String state = doctorsJSON.getJSONArray("practices").getJSONObject(0).getJSONObject("visit_address").optString("state");
+                    String street =doctorsJSON.getJSONArray("practices").getJSONObject(0).getJSONObject("visit_address").optString("street");
 
                     String bio = doctorsJSON.getJSONObject("profile").getString("bio");
 
                     ArrayList<String> phone = new ArrayList<>();
-                    JSONArray phoneJSON = doctorsJSON.getJSONObject("phones")
-                            .getJSONArray("number");
+                    JSONArray phoneJSON =doctorsJSON.getJSONArray("practices").getJSONObject(0).getJSONArray("phones");
                     for (int y = 0; y < phoneJSON.length(); y++) {
-                        phone.add(phoneJSON.getJSONArray(y).get(0).toString());
+                        phone.add(phoneJSON.getJSONObject(y).getString("number").toString());
                     }
 
-                    double rating = doctorsJSON.getDouble("ratings");
-                    String availability = doctorsJSON.getString("office_hours");
+//                    ArrayList<String> ratingJson = new ArrayList<>();
+//                    JSONArray ratingJSON = doctorsJSON.getJSONArray("ratings");
+//                    double rating = ratingJSON.getJSONObject(0).getDouble("rating");
                     String name = firstname + " " + lastname;
-                    String address = state + ", " + street + ", " + street2;
+                    String address = state + ", " + street;
                     Doctor doctor = new Doctor(name, title, image, gender, specialty, languages, address, bio,
-                            phone, rating, availability);
+                            phone);
                     doctors.add(doctor);
                 }
             }

@@ -1,113 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:weightSum="1">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/doctorImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginLeft="120dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
         android:src="@drawable/wallpaper"
-        app:civ_border_width="2dp"
         app:civ_border_color="#FF000000"/>
 
     <LinearLayout
-        android:layout_width="373dp"
-        android:layout_height="207dp"
-        android:background="#ffffff"
         android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="#ffffff"
+        android:layout_height="match_parent"
         android:padding="10dp">
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/doctorsNameTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Doctors Name"
-            android:textColor="@color/colorPrimary"
             android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:text="Doctors Name"
+            android:textColor="@color/colorPrimary"/>
 
         <TextView
-            android:id="@+id/doctorsTitleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/doctorsTitleTextView"
-            android:text="Title"
-            android:textStyle="italic" />
-
-        <TextView
-            android:id="@+id/genderTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gender"
-            android:textStyle="italic" />
-
-        <TextView
-            android:id="@+id/addressTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:text="Address"
-            android:textStyle="italic" />
-
-        <TextView
-            android:id="@+id/phoneTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Phone"
-            android:textStyle="bold|italic" />
-
-        <TextView
-            android:id="@+id/availabilityTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Availability"
-            android:textStyle="italic" />
-
-        <TextView
-            android:id="@+id/specialtyTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Specialty"
-            android:textStyle="italic|bold" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/ratingTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:text="Rating"
-                android:textColor="@color/colorAccent" />
-
-            <TextView
-                android:id="@+id/doctorsBio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="27dp"
-                android:text="Bio"
-                android:textColor="@color/colorPrimary"
-                android:textSize="18dp"
-                android:textStyle="bold" />
-        </RelativeLayout>
-
-        <TextView
-            android:id="@+id/languageTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Languages"
-            android:textStyle="italic" />
+            android:text="Phone No."
+            android:id="@+id/doctorsBio"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:textStyle="italic"/>
 
     </LinearLayout>
-
 </LinearLayout>
