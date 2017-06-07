@@ -1,6 +1,7 @@
 package com.example.kiragu.finddoctor.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +11,10 @@ import android.widget.TextView;
 
 import com.example.kiragu.finddoctor.R;
 import com.example.kiragu.finddoctor.models.Doctor;
+import com.example.kiragu.finddoctor.ui.DoctorsDetailActivity;
 import com.squareup.picasso.Picasso;
+
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
@@ -51,7 +55,7 @@ public class DoctorsListAdapter extends RecyclerView.Adapter<DoctorsListAdapter.
     }
 
     // Set item views based on views and data model
-    public class DoctorsViewHolder extends RecyclerView.ViewHolder {
+    public class DoctorsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         @Bind(R.id.doctorImageView)
         ImageView mDoctorImageView;
         @Bind(R.id.doctorsNameTextView)
@@ -74,6 +78,15 @@ public class DoctorsListAdapter extends RecyclerView.Adapter<DoctorsListAdapter.
             super(itemView);
             ButterKnife.bind(this, itemView);
             mContext = itemView.getContext();
+            itemView.setOnClickListener(this);
+        }
+        @Override
+        public void onClick(View v) {
+            int itemPosition = getLayoutPosition();
+            Intent intent = new Intent(mContext, DoctorsDetailActivity.class);
+            intent.putExtra("position", itemPosition);
+            intent.putExtra("doctors", Parcels.wrap(mDoctors));
+            mContext.startActivity(intent);
         }
 //receiving data from the model and setting it to our view
         public void bindDoctor(Doctor doctor) {

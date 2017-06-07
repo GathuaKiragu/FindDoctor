@@ -5,11 +5,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.kiragu.finddoctor.adapters.DoctorsListAdapter;
 import com.example.kiragu.finddoctor.models.Doctor;
 import com.example.kiragu.finddoctor.services.BetterDoctorService;
+import com.example.kiragu.finddoctor.ui.DoctorsDetailActivity;
+
+import org.parceler.Parcels;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import butterknife.Bind;

@@ -70,7 +70,7 @@ public class BetterDoctorService {
                     String street =doctorsJSON.getJSONArray("practices").getJSONObject(0).getJSONObject("visit_address").optString("street");
 
                     String bio = doctorsJSON.getJSONObject("profile").getString("bio");
-
+                    String website=doctorsJSON.getJSONArray("practices").getJSONObject(0).getString("website");
                     ArrayList<String> phone = new ArrayList<>();
                     JSONArray phoneJSON =doctorsJSON.getJSONArray("practices").getJSONObject(0).getJSONArray("phones");
                     for (int y = 0; y < phoneJSON.length(); y++) {
@@ -82,7 +82,7 @@ public class BetterDoctorService {
 //                    double rating = ratingJSON.getJSONObject(0).getDouble("rating");
                     String name = firstname + " " + lastname;
                     String address = state + ", " + street;
-                    Doctor doctor = new Doctor(name, title, image, gender, specialty, languages, address, bio,
+                    Doctor doctor = new Doctor(name, title, image, gender, specialty, languages, address, bio, website,
                             phone);
                     doctors.add(doctor);
                 }
