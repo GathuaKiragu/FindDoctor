@@ -14,6 +14,8 @@ public class Doctor{
     private String title;
     private String image;
     private String gender;
+    private double latitude;
+    private double longitude;
     private List<String> specialty = new ArrayList<>();
     private List<String> language = new
             ArrayList<>();
@@ -26,12 +28,14 @@ public class Doctor{
 //    Empty constructor for parceler
 public Doctor(){}
     // Constructor
-    public Doctor(String name, String title, String image, String gender, List<String> specialty, List<String> language, String website, String address, String bio,
+    public Doctor(String name, String title, String image, String gender,double latitude,double longitude, List<String> specialty, List<String> language, String website, String address, String bio,
                   ArrayList<String> phone) {
         this.name = name;
         this.title = title;
         this.image = image;
         this.gender =gender;
+        this.latitude = latitude;
+        this.longitude = longitude;
         this.specialty = specialty;
         this.language = language;
         this.address = address;
@@ -58,6 +62,14 @@ public Doctor(){}
 
     public String getGender() {
         return gender;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
     }
 
     public List<String> getSpecialty(){

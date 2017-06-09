@@ -51,7 +51,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_above="@+id/saveRestaurantButton"
+                android:layout_above="@+id/saveDoctorsButton"
                 android:paddingLeft="30dp"
                 android:paddingTop="20dp"
                 android:paddingRight="30dp">
@@ -111,7 +111,7 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/saveRestaurantButton"
+                android:id="@+id/saveDoctorsButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/button"
