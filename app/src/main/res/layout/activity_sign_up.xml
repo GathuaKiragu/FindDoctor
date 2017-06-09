@@ -44,7 +44,7 @@
         android:textColor="@color/colorWhite"
         android:ems="10"
         android:drawableLeft="@drawable/ic_account_circle_white_24dp"
-        android:hint="Email"
+        android:hint=" Email"
         android:inputType="textEmailAddress" />
 
     <EditText
@@ -54,7 +54,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:drawableLeft="@drawable/ic_https_white_24dp"
-        android:hint="password"
+        android:hint=" password"
         android:textColorHint="@color/colorWhite"
         android:textColor="@color/colorWhite"
         android:inputType="textPassword"
@@ -70,7 +70,7 @@
         android:ems="10"
         android:textColorHint="@color/colorWhite"
         android:textColor="@color/colorWhite"
-        android:hint="confirm password"
+        android:hint=" confirm password"
         android:drawableLeft="@drawable/ic_https_white_24dp"
         android:inputType="textPassword"
         android:layout_below="@+id/editText9"
@@ -93,8 +93,7 @@
         android:layout_height="wrap_content"
         android:textSize="15sp"
         android:textStyle="bold"
-        android:text="Already Have an Account?
-            Login Here!"
+        android:text="Already Have an Account?Login Here!"
         android:textColor="@color/colorWhite"
         android:layout_below="@+id/editText10"
         android:layout_centerHorizontal="true"
