@@ -19,7 +19,7 @@
         android:text="Register Here!" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/userName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="22dp"
@@ -33,12 +33,12 @@
         android:layout_alignStart="@+id/textView2" />
 
     <EditText
-        android:id="@+id/editText8"
+        android:id="@+id/emailEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/editText"
-        android:layout_alignRight="@+id/editText"
-        android:layout_below="@+id/editText"
+        android:layout_alignEnd="@+id/userName"
+        android:layout_alignRight="@+id/userName"
+        android:layout_below="@+id/userName"
         android:layout_marginTop="18dp"
         android:textColorHint="@color/colorWhite"
         android:textColor="@color/colorWhite"
@@ -48,7 +48,7 @@
         android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/editText9"
+        android:id="@+id/passwordEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -58,12 +58,12 @@
         android:textColorHint="@color/colorWhite"
         android:textColor="@color/colorWhite"
         android:inputType="textPassword"
-        android:layout_below="@+id/editText8"
-        android:layout_alignLeft="@+id/editText8"
-        android:layout_alignStart="@+id/editText8" />
+        android:layout_below="@+id/emailEditText"
+        android:layout_alignLeft="@+id/emailEditText"
+        android:layout_alignStart="@+id/emailEditText" />
 
     <EditText
-        android:id="@+id/editText10"
+        android:id="@+id/confirmPasswordEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
@@ -73,12 +73,12 @@
         android:hint=" confirm password"
         android:drawableLeft="@drawable/ic_https_white_24dp"
         android:inputType="textPassword"
-        android:layout_below="@+id/editText9"
-        android:layout_alignLeft="@+id/editText9"
-        android:layout_alignStart="@+id/editText9" />
+        android:layout_below="@+id/passwordEditText"
+        android:layout_alignLeft="@+id/passwordEditText"
+        android:layout_alignStart="@+id/passwordEditText" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/signUpButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/colorWhite"
@@ -95,7 +95,7 @@
         android:textStyle="bold"
         android:text="Already Have an Account?Login Here!"
         android:textColor="@color/colorWhite"
-        android:layout_below="@+id/editText10"
+        android:layout_below="@+id/confirmPasswordEditText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="11dp" />
 
