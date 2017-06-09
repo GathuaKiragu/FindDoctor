@@ -35,7 +35,7 @@
                 android:layout_alignParentStart="true"
                 android:text="Doctors Name"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="20sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
         </RelativeLayout>
@@ -96,20 +96,6 @@
                     android:gravity="center_vertical"/>
 
                 <TextView
-                    android:id="@+id/specialTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:drawablePadding="4dp"
-                    android:layout_marginLeft="40dp"
-                    android:gravity="center_vertical"
-                    android:text="Specializes In"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
-
-                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Specializes In"
@@ -125,15 +111,17 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/saveRestaurantButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Save Restaurant"
-                android:id="@+id/saveRestaurantButton"
-                android:layout_alignParentBottom="true"
                 android:background="@drawable/button"
+                android:text="Save Restaurant"
                 android:textColor="@color/colorWhite"
-                android:width="3dp"
-                android:textSize="15sp" />
+                android:textSize="10sp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
         </RelativeLayout>
     </LinearLayout>
 </FrameLayout>

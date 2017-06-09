@@ -26,7 +26,7 @@ import butterknife.ButterKnife;
         @Bind(R.id.doctorsNameTextView)
         TextView mDoctorsNameTextView;
         @Bind(R.id.websiteTextView)
-        TextView mWebsiteTitleTextView;
+        TextView mWebsiteTextView;
         @Bind(R.id.phoneTextView)
         TextView mPhoneTextView;
         @Bind(R.id.specialtyTextView) TextView mSpecialty;
@@ -40,22 +40,20 @@ import butterknife.ButterKnife;
             doctorsDetailFragment.setArguments(args);
             return doctorsDetailFragment;
         }
-
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             mDoctor = Parcels.unwrap(getArguments().getParcelable("doctor"));
         }
-
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             View view = inflater.inflate(R.layout.fragment_doctors_detail, container, false);
             ButterKnife.bind(this, view);
             Picasso.with(view.getContext()).load(mDoctor.getImage()).into(mDoctorImageView);
             mDoctorsNameTextView.setText(mDoctor.getName());
-            mWebsiteTitleTextView.setText(mDoctor.getWebsite());
+            mWebsiteTextView.setText(mDoctor.getWebsite());
             mPhoneTextView.setText(android.text.TextUtils.join(", ", mDoctor.getPhone()));
-            mSpecialty.setText(mDoctor.getAddress());
+            mSpecialty.setText(android.text.TextUtils.join(", ", mDoctor.getSpecialty()));
             return view;
         }
     }

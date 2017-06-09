@@ -68,8 +68,8 @@ public class DoctorsListAdapter extends RecyclerView.Adapter<DoctorsListAdapter.
 //        TextView mAddressTextView;
 //        @Bind(R.id.phoneTextView)
 //        TextView mPhoneTextView;
-        @Bind(R.id.doctorsBio)
-        TextView mDoctorsBio;
+        @Bind(R.id.doctorsSpecialty)
+        TextView mDoctorsSpecialty;
 //        @Bind(R.id.languageTextView) TextView mLanguageTextView;
 //        @Bind(R.id.specialtyTextView) TextView mSpecialty;
         private Context mContext;
@@ -95,9 +95,9 @@ public class DoctorsListAdapter extends RecyclerView.Adapter<DoctorsListAdapter.
 //            mDoctorsTitleTextView.setText(doctor.getTitle());
 //            mGenderTextView.setText(doctor.getGender());
 //            mAddressTextView.setText(doctor.getName());
-            mDoctorsBio.setText(doctor.getBio());
+//            mDoctorsBio.setText(doctor.getBio());
 //            mPhoneTextView.setText(doctor.getPhone().get(0));
-//            mSpecialty.setText(doctor.getSpecialty().get(0));
+            mDoctorsSpecialty.setText(doctor.getSpecialty().get(0));
 //            mLanguageTextView.setText(doctor.getLanguages().get(0));
 
         }

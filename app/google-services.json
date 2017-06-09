@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "129161365351",
+    "firebase_url": "https://finddoctor-84f6a.firebaseio.com",
+    "project_id": "finddoctor-84f6a",
+    "storage_bucket": "finddoctor-84f6a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:129161365351:android:8c18c9f12e7a0039",
+        "android_client_info": {
+          "package_name": "com.example.kiragu.finddoctor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "129161365351-kcmmlqchg0hoau2s1kc1u4cnmhjpmdp1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kiragu.finddoctor",
+            "certificate_hash": "d4a84e7db0e277f5ae64d291999913d167d8c16d"
+          }
+        },
+        {
+          "client_id": "129161365351-7648i37k8e9ut0nmsmtjujtns86str4e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBWIRrUgcaQY2nyhqmUQPfa3LYSyBeAK4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "129161365351-7648i37k8e9ut0nmsmtjujtns86str4e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
