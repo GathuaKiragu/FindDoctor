@@ -1,6 +1,8 @@
 package com.example.kiragu.finddoctor.models;
 
 import java.util.ArrayList;
+import java.util.List;
+
 import org.parceler.Parcel;
 
 /**
@@ -8,33 +10,34 @@ import org.parceler.Parcel;
  */
 @Parcel
 public class Doctor{
-    private String mName;
-    private String mTitle;
-    private String mImage;
-    private String mGender;
-    private ArrayList<String> mSpecialty = new ArrayList<>();
-    private ArrayList<String> mLanguages = new ArrayList<>();
-    private String mWebsite;
-    private String mAddress;
-    private String mBio;
-    private ArrayList<String> mPhone = new ArrayList<>();
+    private String name;
+    private String title;
+    private String image;
+    private String gender;
+    private List<String> specialty = new ArrayList<>();
+    private List<String> language = new
+            ArrayList<>();
+    private String website;
+    private String address;
+    private String bio;
+    private List<String> phone = new ArrayList<>();
 //    private double mRating;
 
 //    Empty constructor for parceler
 public Doctor(){}
     // Constructor
-    public Doctor(String name, String title, String image, String gender, ArrayList<String> specialty, ArrayList<String> language, String website, String address, String bio,
+    public Doctor(String name, String title, String image, String gender, List<String> specialty, List<String> language, String website, String address, String bio,
                   ArrayList<String> phone) {
-        this.mName = name;
-        this.mTitle = title;
-        this.mImage = image;
-        this.mGender =gender;
-        this.mSpecialty = specialty;
-        this.mLanguages = language;
-        this.mAddress = address;
-        this.mBio = bio;
-        this.mPhone = phone;
-        this.mWebsite= website;
+        this.name = name;
+        this.title = title;
+        this.image = image;
+        this.gender =gender;
+        this.specialty = specialty;
+        this.language = language;
+        this.address = address;
+        this.bio = bio;
+        this.phone = phone;
+        this.website= website;
 //        this.mRating = rating;
 
 
@@ -42,36 +45,36 @@ public Doctor(){}
 //    getter methods
 
     public String getName() {
-        return mName;
+        return name;
     }
 
     public String getTitle() {
-        return mTitle;
+        return title;
     }
 
     public String getImage() {
-        return  mImage;
+        return  image;
     }
 
     public String getGender() {
-        return mGender;
+        return gender;
     }
 
-    public ArrayList<String> getSpecialty(){
-        return mSpecialty;
+    public List<String> getSpecialty(){
+        return specialty;
     }
-    public ArrayList<String> getLanguages() {
-        return mLanguages;
+    public List<String> getLanguages() {
+        return language;
     }
-    public  String getWebsite(){return  mWebsite; }
+    public  String getWebsite(){return  website; }
     public String getAddress() {
-        return mAddress;
+        return address;
     }
     public String getBio() {
-        return mBio;
+        return bio;
     }
-    public ArrayList<String> getPhone() {
-        return mPhone;
+    public List<String> getPhone() {
+        return phone;
     }
 //    public double getRating() {
 //        return mRating;
