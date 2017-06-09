@@ -38,8 +38,8 @@
         tools:layout_editor_absoluteX="84dp"
         tools:layout_editor_absoluteY="233dp"
         android:layout_below="@+id/emailTextView"
-        android:layout_alignRight="@+id/headerTextView"
-        android:layout_alignEnd="@+id/headerTextView" />
+        android:layout_alignLeft="@+id/emailTextView"
+        android:layout_alignStart="@+id/emailTextView" />
 
     <Button
         android:id="@+id/loginButton"
@@ -89,12 +89,10 @@
         android:layout_height="wrap_content"
         android:textSize="15sp"
         android:textStyle="bold"
-        android:text="Dont Have an Account?
-            SignUp Here!"
+        android:text="Dont Have an Account?SignUp Here!"
         android:textColor="@color/colorWhite"
-        android:layout_below="@+id/editText2"
-        android:layout_alignLeft="@+id/imageView2"
-        android:layout_alignStart="@+id/imageView2"
-        android:layout_marginTop="18dp" />
+        android:layout_above="@+id/loginButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="31dp" />
 
 </RelativeLayout>
