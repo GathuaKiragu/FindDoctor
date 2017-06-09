@@ -13,6 +13,7 @@
         android:text="Find Doctor!"
         android:textSize="40sp"
         android:textStyle="bold"
+        android:textColor="@color/colorWhite"
         android:drawablePadding="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -21,29 +22,32 @@
         android:id="@+id/headerTextView"
         android:layout_marginBottom="28dp"
         android:layout_above="@+id/imageView2"
-        android:layout_alignLeft="@+id/editText3"
-        android:layout_alignStart="@+id/editText3" />
+        android:layout_alignLeft="@+id/emailTextView"
+        android:layout_alignStart="@+id/emailTextView" />
     <EditText
         android:id="@+id/editText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword"
-        android:hint="password"
+        android:hint=" password"
+        android:paddingBottom="10dp"
+        android:drawableLeft="@drawable/ic_https_white_24dp"
+        android:textColorHint="@color/colorWhite"
+        android:textColor="@color/colorWhite"
         tools:layout_editor_absoluteX="84dp"
         tools:layout_editor_absoluteY="233dp"
-        android:layout_marginBottom="107dp"
-        android:layout_marginRight="73dp"
-        android:layout_marginEnd="73dp"
-        android:layout_above="@+id/button2"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@+id/emailTextView"
+        android:layout_alignRight="@+id/headerTextView"
+        android:layout_alignEnd="@+id/headerTextView" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LOGIN"
+        android:textColor="@color/colorWhite"
+        android:background="@color/button_green"
         tools:layout_editor_absoluteX="147dp"
         tools:layout_editor_absoluteY="338dp"
         android:layout_alignParentBottom="true"
@@ -63,28 +67,34 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintVertical_bias="0.534"
         android:layout_marginBottom="59dp"
-        android:layout_above="@+id/editText3"
+        android:layout_above="@+id/emailTextView"
         android:layout_centerHorizontal="true" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/emailTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Email"
-        android:textColor="@color/colorAccent"
+        android:hint="   Email"
+        android:textColorHint="@color/colorWhite"
+        android:textColor="@color/colorWhite"
         android:ems="10"
+        android:drawableLeft="@drawable/ic_account_circle_white_24dp"
         android:inputType="textEmailAddress"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/loginTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="65dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
         android:text="Dont Have an Account?
-            SignUp Here!" />
+            SignUp Here!"
+        android:textColor="@color/colorWhite"
+        android:layout_below="@+id/editText2"
+        android:layout_alignLeft="@+id/imageView2"
+        android:layout_alignStart="@+id/imageView2"
+        android:layout_marginTop="18dp" />
 
 </RelativeLayout>

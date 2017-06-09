@@ -20,7 +20,8 @@
         </activity>
         <activity android:name=".DoctorsListActivity" />
         <activity android:name=".ui.DoctorsDetailActivity" />
-        <activity android:name=".ui.LoginActivity"></activity>
+        <activity android:name=".ui.LoginActivity" />
+        <activity android:name=".ui.SignUpActivity"></activity>
     </application>
 
 </manifest>
