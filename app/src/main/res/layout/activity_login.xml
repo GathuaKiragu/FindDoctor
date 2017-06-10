@@ -20,12 +20,12 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/headerTextView"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="20dp"
         android:layout_above="@+id/imageView2"
-        android:layout_alignLeft="@+id/emailTextView"
-        android:layout_alignStart="@+id/emailTextView" />
+        android:layout_alignRight="@+id/emailEditText"
+        android:layout_alignEnd="@+id/emailEditText" />
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/passwordEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -37,9 +37,9 @@
         android:textColor="@color/colorWhite"
         tools:layout_editor_absoluteX="84dp"
         tools:layout_editor_absoluteY="233dp"
-        android:layout_below="@+id/emailTextView"
-        android:layout_alignLeft="@+id/emailTextView"
-        android:layout_alignStart="@+id/emailTextView" />
+        android:layout_below="@+id/emailEditText"
+        android:layout_alignLeft="@+id/emailEditText"
+        android:layout_alignStart="@+id/emailEditText" />
 
     <Button
         android:id="@+id/loginButton"
@@ -67,11 +67,11 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintVertical_bias="0.534"
         android:layout_marginBottom="59dp"
-        android:layout_above="@+id/emailTextView"
+        android:layout_above="@+id/emailEditText"
         android:layout_centerHorizontal="true" />
 
     <EditText
-        android:id="@+id/emailTextView"
+        android:id="@+id/emailEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="   Email"
