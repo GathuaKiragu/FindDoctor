@@ -35,6 +35,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     EditText mPasswordEditText;
     @Bind(R.id.confirmPasswordEditText)
     EditText mConfirmPasswordEditText;
+    @Bind(R.id.signUpTextView) TextView mSignUpTextView;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
@@ -44,6 +45,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_sign_up);
         ButterKnife.bind(this);
         mSignButton.setOnClickListener(this);
+        mSignUpTextView.setOnClickListener(this);
         mAuth = FirebaseAuth.getInstance();
         createAuthStateListener();
 
@@ -51,13 +53,12 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     //Onclick listeners
     @Override
     public void onClick(View view) {
-
-        if (view == mSignButton) {
-            Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-            finish();
-        }
+         if (view == mSignUpTextView){
+                Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                finish();
+            }
         if (view == mSignButton) {
             createNewUser();
         }
@@ -69,8 +70,14 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         final String email = mEmailEditText.getText().toString().trim();
         String password = mPasswordEditText.getText().toString().trim();
         String confirmPassword = mConfirmPasswordEditText.getText().toString().trim();
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+
+//calling the user details validation methods
+        boolean validEmail = isValidEmail(email);
+        boolean validName = isValidName(username);
+        boolean validPassword = isValidPassword(password, confirmPassword);
+        if (!validEmail || !validName || !validPassword) return;
+
+        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
