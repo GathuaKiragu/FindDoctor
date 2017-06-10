@@ -10,10 +10,13 @@ import android.widget.TextView;
 import com.example.kiragu.finddoctor.DoctorsListActivity;
 import com.example.kiragu.finddoctor.MainActivity;
 import com.example.kiragu.finddoctor.R;
+import com.google.firebase.auth.FirebaseAuth;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+    public static final String TAG = LoginActivity.class.getSimpleName();
     @Bind(R.id.loginTextView)
     TextView mLoginTextView;
     @Bind(R.id.loginButton)
@@ -21,7 +24,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Bind(R.id.emailEditText)
     EditText mEmailEditText;
     @Bind(R.id.passwordEditText) EditText mPasswordEditText;
-    public static final String TAG = LoginActivity.class.getSimpleName();
+    private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +33,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
         mLoginTextView.setOnClickListener(this);
+        mLoginButton.setOnClickListener(this);
+
+        mAuth = FirebaseAuth.getInstance();
     }
 
     @Override
@@ -37,6 +44,22 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
             startActivity(intent);
             finish();
+        }
+        if (view == mLoginButton) {
+            loginWithPassword();
+        }
+    }
+//   method for authenticating the account with the user-provided credentials
+    private void loginWithPassword() {
+        String email = mEmailEditText.getText().toString().trim();
+        String password = mPasswordEditText.getText().toString().trim();
+        if (email.equals("")) {
+            mEmailEditText.setError("Please enter your email");
+            return;
+        }
+        if (password.equals("")) {
+            mPasswordEditText.setError("Password cannot be blank");
+            return;
         }
     }
 }
