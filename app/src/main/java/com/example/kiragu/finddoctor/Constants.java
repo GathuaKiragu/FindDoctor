@@ -10,6 +10,7 @@ public class Constants {
     public static final String YOUR_LOCATION_QUERY_PARAMETER = "location";
     public static final String API_KEY_QUERY_PARAMETER = ",10&skip=0&limit=100&user_key=";
     public static final String FIREBASE_CHILD_DOCTORS = "doctors";
+    public static final String PREFERENCES_LOCATION_KEY= "location";
     public static final String FIREBASE_CHILD_SEARCHED_LOCATION = "searchedLocation";
 
 }
