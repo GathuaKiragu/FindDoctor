@@ -25,12 +25,10 @@ import com.google.firebase.database.ValueEventListener;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     @Bind(R.id.headerTextView) TextView mTextView;
     @Bind(R.id.findDoctorButton)
     Button mFindDoctorButton;
-    @Bind(R.id.location)
-    EditText mLocation;
     @Bind(R.id.saveDoctorButton)
     Button msavedDoctorsButton;
 
@@ -67,14 +65,14 @@ public class MainActivity extends AppCompatActivity {
         mTextView.setTypeface(amita);
 
 //Onclick listener to take user to the DoctorsListActivity
-        mFindDoctorButton.setOnClickListener(new View.OnClickListener() {
+        msavedDoctorsButton.setOnClickListener(this);
+        mFindDoctorButton.setOnClickListener(this);
+    }
             @Override
             public void onClick(View v) {
                 if(v == mFindDoctorButton) {
 //Passing location to the DoctorsListActivity
-                    String location = mLocation.getText().toString();
                     Intent intent = new Intent(MainActivity.this, DoctorsListActivity.class);
-                    intent.putExtra("location", location);
                     startActivity(intent);
                 }
                 if (v == msavedDoctorsButton) {
@@ -82,10 +80,6 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             }
-        });
-
-    }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

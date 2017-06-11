@@ -79,10 +79,6 @@ public class BetterDoctorService {
                     for (int y = 0; y < phoneJSON.length(); y++) {
                         phone.add(phoneJSON.getJSONObject(y).getString("number").toString());
                     }
-
-//                    ArrayList<String> ratingJson = new ArrayList<>();
-//                    JSONArray ratingJSON = doctorsJSON.getJSONArray("ratings");
-//                    double rating = ratingJSON.getJSONObject(0).getDouble("rating");
                     String name = firstname + " " + lastname;
                     String address = state + ", " + street;
                     Doctor doctor = new Doctor(name, title, image, gender, latitude, longitude, specialty, languages, address, bio, website,
