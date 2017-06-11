@@ -78,7 +78,7 @@
         android:textColorHint="@color/colorWhite"
         android:textColor="@color/colorWhite"
         android:ems="10"
-        android:drawableLeft="@drawable/ic_account_circle_white_24dp"
+        android:drawableLeft="@drawable/ic_email_white_24dp"
         android:inputType="textEmailAddress"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />

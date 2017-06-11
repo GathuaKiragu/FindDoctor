@@ -24,10 +24,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="22dp"
         android:ems="10"
+        android:drawableLeft="@drawable/ic_account_circle_white_24dp"
         android:textColorHint="@color/colorWhite"
         android:textColor="@color/colorWhite"
         android:inputType="textPersonName"
-        android:hint="Name"
+        android:hint=" Name"
         android:layout_below="@+id/textView2"
         android:layout_alignLeft="@+id/textView2"
         android:layout_alignStart="@+id/textView2" />
@@ -43,7 +44,7 @@
         android:textColorHint="@color/colorWhite"
         android:textColor="@color/colorWhite"
         android:ems="10"
-        android:drawableLeft="@drawable/ic_account_circle_white_24dp"
+        android:drawableLeft="@drawable/ic_email_white_24dp"
         android:hint=" Email"
         android:inputType="textEmailAddress" />
 

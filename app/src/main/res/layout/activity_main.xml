@@ -36,42 +36,25 @@
 
     <Button
         android:id="@+id/findDoctorButton"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Find Doc"
         android:background="@color/colorBg"
-        android:layout_marginBottom="38dp"
         android:textColor="@color/colorWhite"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/location"
-        android:layout_alignEnd="@+id/location"
+        android:layout_marginTop="42dp"
+        android:layout_below="@+id/saveDoctorButton"
         android:layout_alignLeft="@+id/saveDoctorButton"
         android:layout_alignStart="@+id/saveDoctorButton" />
     <Button
         android:id="@+id/saveDoctorButton"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="SavedDoctors"
         android:background="@color/colorBg"
         android:textColor="@color/colorWhite"
-        android:layout_marginBottom="31dp"
-        android:layout_above="@+id/findDoctorButton"
-        android:layout_alignRight="@+id/headerTextView"
-        android:layout_alignEnd="@+id/headerTextView"
-        android:layout_alignLeft="@+id/location"
-        android:layout_alignStart="@+id/location" />
-
-    <EditText
-        android:id="@+id/location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/headerTextView"
-        android:layout_alignStart="@+id/headerTextView"
         android:layout_centerVertical="true"
-        android:ems="10"
-        android:drawableLeft="@drawable/ic_add_location_black_24dp"
-        android:drawablePadding="5dp"
-        android:inputType="textPersonName"
-        android:hint="Location" />
+        android:layout_alignRight="@+id/headerTextView"
+        android:layout_alignEnd="@+id/headerTextView" />
+
 
 </RelativeLayout>
