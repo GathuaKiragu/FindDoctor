@@ -5,4 +5,8 @@ package com.example.kiragu.finddoctor.util;
  */
 
 public interface ItemTouchHelperViewHolder {
+    //  will handle the updating the appearance of an item
+    void onItemSelected();
+    //Will remove the selected item from the view
+    void onItemClear();
 }
