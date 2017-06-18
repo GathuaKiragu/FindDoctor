@@ -74,6 +74,7 @@ public class BetterDoctorService {
 
                     String bio = doctorsJSON.getJSONObject("profile").getString("bio");
                     String website=doctorsJSON.getJSONArray("practices").getJSONObject(0).getString("website");
+
                     ArrayList<String> phone = new ArrayList<>();
                     JSONArray phoneJSON =doctorsJSON.getJSONArray("practices").getJSONObject(0).getJSONArray("phones");
                     for (int y = 0; y < phoneJSON.length(); y++) {
