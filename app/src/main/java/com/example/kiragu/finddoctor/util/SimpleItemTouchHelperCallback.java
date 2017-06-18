@@ -9,7 +9,7 @@ import static android.support.v7.widget.helper.ItemTouchHelper.Callback.makeMove
  * Created by kiragu on 6/18/17.
  */
 
-public class SimpleItemTouchHelperCallback extends ItemTouchHelper.callback {
+public class SimpleItemTouchHelperCallback extends ItemTouchHelper.Callback {
     private final ItemTouchHelperAdapter mAdapter;
 
     //  This constructor takes an ItemTouchHelperAdapter parameter. When implemented in
