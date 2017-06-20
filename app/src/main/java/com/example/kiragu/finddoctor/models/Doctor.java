@@ -10,19 +10,21 @@ import org.parceler.Parcel;
  */
 @Parcel
 public class Doctor{
-    private String name;
-    private String title;
-    private String image;
-    private String gender;
-    private double latitude;
-    private double longitude;
-    private List<String> specialty = new ArrayList<>();
-    private List<String> language = new
+    String name;
+    String title;
+    String image;
+    String gender;
+    double latitude;
+    String index;
+    private String pushId;
+    double longitude;
+    List<String> specialty = new ArrayList<>();
+    List<String> language = new
             ArrayList<>();
-    private String website;
-    private String address;
-    private String bio;
-    private List<String> phone = new ArrayList<>();
+    String website;
+    String address;
+    String bio;
+    List<String> phone = new ArrayList<>();
 //    private double mRating;
 
 //    Empty constructor for parceler
@@ -42,6 +44,7 @@ public Doctor(){}
         this.bio = bio;
         this.phone = phone;
         this.website= website;
+        this.index="not specified";
 //        this.mRating = rating;
 
 
@@ -70,6 +73,21 @@ public Doctor(){}
 
     public double getLongitude() {
         return longitude;
+    }
+
+    public String getIndex() {
+        return index;
+    }
+
+    public void setIndex(String index) {
+        this.index = index;
+    }
+    public String getPushId(){
+        return pushId;
+    }
+
+    public void setPushId(String pushId){
+        this.pushId = pushId;
     }
 
     public List<String> getSpecialty(){

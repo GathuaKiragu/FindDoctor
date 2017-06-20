@@ -31,9 +31,9 @@ public class FirebaseDoctorListAdapter extends FirebaseRecyclerAdapter<Doctor, F
     private OnStartDragListener mOnStartDragListener;
     private ChildEventListener mChildEventListener;
     private Context mContext;
-    private ArrayList<Doctor> mRestaurants = new ArrayList<>();
+    private ArrayList<Doctor> mDoctors = new ArrayList<>();
 
-    public FirebaseRestaurantListAdapter(Class<Doctor> modelClass, int modelLayout,
+    public FirebaseDoctorListAdapter(Class<Doctor> modelClass, int modelLayout,
                                          Class<FirebaseDoctorViewHolder> viewHolderClass,
                                          Query ref, OnStartDragListener onStartDragListener, Context context) {
 
@@ -46,7 +46,7 @@ public class FirebaseDoctorListAdapter extends FirebaseRecyclerAdapter<Doctor, F
 
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                mRestaurants.add(dataSnapshot.getValue(Doctor.class));
+                mDoctors.add(dataSnapshot.getValue(Doctor.class));
             }
 
             @Override
@@ -93,7 +93,7 @@ public class FirebaseDoctorListAdapter extends FirebaseRecyclerAdapter<Doctor, F
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, DoctorsDetailActivity.class);
                 intent.putExtra("position", viewHolder.getAdapterPosition());
-                intent.putExtra("restaurants", Parcels.wrap(mRestaurants));
+                intent.putExtra("doctors", Parcels.wrap(mDoctors));
                 mContext.startActivity(intent);
             }
         });
@@ -102,20 +102,20 @@ public class FirebaseDoctorListAdapter extends FirebaseRecyclerAdapter<Doctor, F
 
     @Override
     public boolean onItemMove(int fromPosition, int toPosition) {
-        Collections.swap(mRestaurants, fromPosition, toPosition);
+        Collections.swap(mDoctors, fromPosition, toPosition);
         notifyItemMoved(fromPosition, toPosition);
         return false;
     }
 
     @Override
     public void onItemDismiss(int position) {
-        mRestaurants.remove(position);
+        mDoctors.remove(position);
         getRef(position).removeValue();
     }
 
     private void setIndexInFirebase() {
-        for (Doctor doctor : mRestaurants) {
-            int index = mRestaurants.indexOf(doctor);
+        for (Doctor doctor : mDoctors) {
+            int index = mDoctors.indexOf(doctor);
             DatabaseReference ref = getRef(index);
             doctor.setIndex(Integer.toString(index));
             ref.setValue(doctor);

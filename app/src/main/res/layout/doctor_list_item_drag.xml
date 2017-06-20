@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="1">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="100dp"
+            android:id="@+id/doctorsImageView"
+            android:src="@drawable/wallpaper"
+            android:scaleType="centerCrop"/>
+
+        <ImageView
+            android:id="@+id/dragIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignLeft="@id/doctorsImageView"
+            android:layout_alignBottom="@id/doctorsImageView"
+            android:gravity="bottom|left"
+            android:src="@drawable/ic_reorder_white_24dp"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="#ffffff"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/doctorsNameTextView"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Doctors Name"
+            android:textColor="@color/colorPrimary"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Doctors bio"
+            android:id="@+id/doctorsSpecialty"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:textStyle="italic|bold"/>
+
+    </LinearLayout>
+</LinearLayout>
